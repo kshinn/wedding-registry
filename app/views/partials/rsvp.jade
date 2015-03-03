@@ -1,0 +1,19 @@
+
+block content
+  div.content-fluid
+    h1= "R.S.V.P"
+    div.col-md-6
+      form.form
+        div.form-group
+          button.btn.btn-success Yes
+          button.btn.btn-critical No
+        div.form-group
+          label Guests
+          select.form-control(ng-options="guests")
+        div.form-group
+          label Diet Preference
+          select.form-control
+            option(value="meat") Unrestricted
+            option(value="vege") Vegetarian / Vegan
+
+        button.btn.btn-success(type="submit") Submit

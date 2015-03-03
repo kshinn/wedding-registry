@@ -1,0 +1,37 @@
+div.container
+  div.page-header
+    h1 Where to stay
+  div.col-md-4
+    div.panel.panel-default
+      div.panel-heading
+        h3.panel-title Hilton San Gabriel
+          span.pull-right
+            i.glyphicon.glyphicon-chevron-right
+      div.panel-body
+        p 225 W. Valley Blvd
+        p San Gabriel, Ca 91776
+        p
+          a(href='http://www.hilton.com/San_Gabriel') Website
+    div.panel.panel-default
+      div.panel-heading
+        h3.panel-title Best Western Monterey Park
+          span.pull-right
+            i.glyphicon.glyphicon-chevron-right
+      div.panel-body
+        p 420 N. Atlantic Blvd.
+        p Monterey Park, Ca 91754
+        p
+          a(href='www.bestwestern.com/Monterey_Park') Website
+    div.panel.panel-default
+      div.panel-heading
+        h3.panel-title Hotel Figueroa
+          span.pull-right
+            i.glyphicon.glyphicon-chevron-right
+      div.panel-body
+        p 939 S. Figueroa St
+        p Los Angeles, Ca 90015
+        p
+          a(href='http://www.figueroahotel.com/') Website
+  div.col-md-8
+    div(id="map_canvas")
+      ui-gmap-google-map(center="map.center", zoom="map.zoom", draggable="true")

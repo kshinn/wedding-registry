@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('/img/yuzen-band.jpg');
+  background-repeat: repeat-x;
+  background-color: #000;
+}
+
+div.content {
+  background-color: rgb(253,253,241);
+  border-radius: 5px;
+}
+
+a {
+  color: rgb(212,153,206);
+}
+
+a:hover, a:active {
+  color: rgb(58,33,77);
+}
+
+.angular-google-map-container { height: 400px; }
+
+ul.nav {
+    margin-top: 70px;
+}

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.container-fluid
+    h1= title
+    div.col-md-6
+      form.form
+        div.form-group
+          input.form-control(type='text', placeholder='Enter your name')
+        div.form-group
+          input.form-control(type='text', placeholder='Enter your city')
+        button.btn.btn-default(type='submit') Submit
