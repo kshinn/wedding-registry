@@ -16,6 +16,13 @@ angular.module("PKWedding", ['ui.router', 'uiGmapgoogle-maps'])
         console.log("Main State");
       }
     })
+    /*
+    .state('site.index', {
+      url: '',
+      templateUrl: '/partials/main',
+      controller: 'MainController'
+    })
+*/
     .state('site.venue', {
       templateUrl: '/partials/siteVenue',
       url: 'venue',
@@ -28,7 +35,7 @@ angular.module("PKWedding", ['ui.router', 'uiGmapgoogle-maps'])
       url: 'hotel'
     })
     .state('site.ceremony', {
-      template: 'Ceremony',
+      templateUrl: '/partials/ceremony',
       url: 'ceremony'
     })
   })

@@ -9,7 +9,7 @@ var config = {
       name: 'wedding'
     },
     port: 3000,
-    db: 'mysql://root:@localhost/weddingDev'
+    db: 'mysql://root:@localhost/wedding'
   },
 
   test: {
@@ -25,7 +25,7 @@ var config = {
   production: {
     root: rootPath,
     app: {
-      name: 'development'
+      name: 'wedding'
     },
     port: 3000,
     db: 'mysql://localhost/development-production'
