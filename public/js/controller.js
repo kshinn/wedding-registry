@@ -37,6 +37,9 @@ angular.module('PKWedding')
         })
         $scope.submitRsvp = function() {
             console.log($scope.guest);
-            gRest.all('rsvp').post($scope.guest);
+            $scope.selected.foodPref = $scope.guest.diet;
+            $scope.selected.status = $scope.guest.response;
+            $scope.selected.selectedGuests = $scope.guest.plus
+            $scope.selected.put();
         }
     }]);

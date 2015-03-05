@@ -31,6 +31,16 @@ router.get('/guest', function(req,res) {
         res.send(guests);
     })
 });
+
+router.put('/guest/:id', function(req, res) {
+    db.Guest.find({id: req.params.id}).success(function(item) {
+        console.log(item);
+        item.updateAttributes(req.body).success(function(item) {
+            res.status(204).end();
+        });
+    })
+})
+
 router.post('/guest/rsvp', function(req, res) {
     console.log(req.body);
     res.send('ok');
