@@ -8,14 +8,50 @@ ul.nav.nav-pills
   li
     a(ui-sref="site.ceremony") Ceremony
 
-div.ui-view
-  div.container
-    div.page-header
-      h1 We are getting (got) married!
+div.ui-view.container
+  div.page-header
+    h1 We are getting (got) married!
+  div.col-md-4
+
+    div.panel.panel-default
+      div.panel-heading
+        h2.panel-title R.S.V.P.
+      div.panel-body
+        form.form
+          .form-group
+            autocomplete(data="allGuests", ng-model="guest.name", attr-input-class="form-control")
+            //input.form-control(ng-model="guest.name" type="text", name="name", placeholder="Enter Your Name")
+          .form-group
+            select.form-control(ng-model="guest.response" type="text", name="response", placeholder="Zip Code")
+              option(value="") Are you coming?
+              option(value="accept") Yes! I'm Coming
+              option(value="decline") Neh, I'll Pass
+          .form-group
+            select.form-control(ng-model="guest.plus", ng-options="item.value as item.label for item in numGuests")
+          .form-group
+            select.form-control(ng-model="guest.diet")
+              option(value="") Special Diet?
+              option(value="meat") Hoof and feather
+              option(value="vege") Only the plants
+
+          button.btn.btn-default(ng-click="submitRsvp()" type="submit") Submit
+
+    div.panel.panel-default
+      div.panel-heading
+        h2.panel-title Registry
+      div.panel-body
+        p
+          | Oh noes, we have no registry!
+          | We already have enough stuff couples typically need, but could sure use help elsewhere!
+          | In lieu of traditional registry gives we have registered at a Special
+          | place where you can help us get some of the things we need.
+
+        p
+          a(href="http://www.honeyfund.com/wedding/phoebeandkris") Wedding Registry
+  div.col-md-8
 
     div
       center
         img(src="/img/pnk.png")
+    p
 
-      p
-        a(href="http://www.honeyfund.com/wedding/phoebeandkris") Wedding Registry

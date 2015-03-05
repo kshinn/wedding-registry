@@ -1,4 +1,4 @@
-angular.module("PKWedding", ['ui.router', 'uiGmapgoogle-maps'])
+angular.module("PKWedding", ['ui.router', 'uiGmapgoogle-maps', 'restangular', 'autocomplete'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('rsvp', {
@@ -16,13 +16,12 @@ angular.module("PKWedding", ['ui.router', 'uiGmapgoogle-maps'])
         console.log("Main State");
       }
     })
-    /*
-    .state('site.index', {
-      url: '',
-      templateUrl: '/partials/main',
-      controller: 'MainController'
-    })
-*/
+
+    // .state('site.index', {
+    //   url: 'main',
+    //   templateUrl: '/partials/main',
+    //   controller: 'MainController'
+    // })
     .state('site.venue', {
       templateUrl: '/partials/siteVenue',
       url: 'venue',

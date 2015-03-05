@@ -9,6 +9,7 @@ module.exports = function(sequelize, dataTypes) {
         status: dataTypes.ENUM('accept', 'decline'),
         guests: dataTypes.INTEGER,
         foodPref: dataTypes.ENUM('meat', 'vege'),
+        selectedGuests: dataTypes.INTEGER,
     });
 
     return Guest;

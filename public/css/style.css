@@ -1,6 +1,7 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Archivo Narrow', sans-serif;
+  font: 14px "Archivo Narrow", Helvetica, Arial, sans-serif;
   background-image: url('/img/yuzen-band.jpg');
   background-repeat: repeat-x;
   background-color: #000;
@@ -23,4 +24,16 @@ a:hover, a:active {
 
 ul.nav {
     margin-top: 70px;
+}
+
+.jumbotron {
+  background-color: transparent;
+}
+
+.jumbotron h1 {
+  color: rgb(253,253,241);
+}
+
+.signin {
+  margin:20px;
 }

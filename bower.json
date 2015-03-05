@@ -5,5 +5,9 @@
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "restangular": "~1.4.0",
+    "allmighty-autocomplete": "*"
+  }
 }
