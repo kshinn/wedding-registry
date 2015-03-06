@@ -37,3 +37,7 @@ ul.nav {
 .signin {
   margin:20px;
 }
+
+hotel-img {
+  max-width: inherit;
+}

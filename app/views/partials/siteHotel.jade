@@ -3,7 +3,7 @@ div.container
     h1 Where to stay
   div.col-md-4
     div.panel.panel-default
-      div.panel-heading
+      div.panel-heading(ng-click="switchHotel('hilton')")
         h3.panel-title Hilton San Gabriel
           span.pull-right
             i.glyphicon.glyphicon-chevron-right
@@ -11,8 +11,8 @@ div.container
         p 225 W. Valley Blvd
         p San Gabriel, Ca 91776
         p
-          a(href='http://www.hilton.com/San_Gabriel') Website
-    div.panel.panel-default
+          a(href='http://www3.hilton.com/en/hotels/california/hilton-los-angeles-san-gabriel-LAXSGHF/index.html') Website
+    div.panel.panel-default(ng-click="switchHotel('best-western')")
       div.panel-heading
         h3.panel-title Best Western Monterey Park
           span.pull-right
@@ -21,8 +21,8 @@ div.container
         p 420 N. Atlantic Blvd.
         p Monterey Park, Ca 91754
         p
-          a(href='www.bestwestern.com/Monterey_Park') Website
-    div.panel.panel-default
+          a(href='http://www.bestwestern.com/Monterey_Park') Website
+    div.panel.panel-default(ng-click="switchHotel('figueroa')")
       div.panel-heading
         h3.panel-title Hotel Figueroa
           span.pull-right
@@ -33,5 +33,5 @@ div.container
         p
           a(href='http://www.figueroahotel.com/') Website
   div.col-md-8
-    div(id="map_canvas")
-      ui-gmap-google-map(center="map.center", zoom="map.zoom", draggable="true")
+    div.hotel-img
+      img(ng-src="{{hotelImg}}")

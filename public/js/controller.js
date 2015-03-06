@@ -42,4 +42,23 @@ angular.module('PKWedding')
             $scope.selected.selectedGuests = $scope.guest.plus
             $scope.selected.put();
         }
-    }]);
+    }])
+
+.controller('HotelController', ['$scope', function($scope) {
+    $scope.hotelImg = '/img/hilton-svg.jpg';
+
+    $scope.switchHotel = function(hotel) {
+        console.log(hotel);
+        switch(hotel) {
+            case 'hilton':
+                $scope.hotelImg = '/img/hilton-svg.jpg';
+                break;
+            case 'best-western':
+                $scope.hotelImg = '/img/best-western-monterey.jpg';
+                break;
+            case 'figueroa':
+                $scope.hotelImg = '/img/hotel-figueroa.jpg';
+                break;
+        }
+    }
+}]);

@@ -31,7 +31,8 @@ angular.module("PKWedding", ['ui.router', 'uiGmapgoogle-maps', 'restangular', 'a
     })
     .state('site.hotel', {
       templateUrl: '/partials/siteHotel',
-      url: 'hotel'
+      url: 'hotel',
+      controller: 'HotelController'
     })
     .state('site.ceremony', {
       templateUrl: '/partials/ceremony',
