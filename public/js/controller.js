@@ -13,7 +13,6 @@ angular.module('PKWedding')
 
         $scope.guest = {};
         $scope.selected = {};
-        $scope.numGuests = [];
 
         uiGmapLogger.doLog = true;
         uiGmapGoogleMapApi.then(function(maps) {
@@ -29,14 +28,15 @@ angular.module('PKWedding')
             var labels;
             $scope.selected = _.where(guests, {fullName: newValue});
             if ($scope.selected.length > 0) {
+                $scope.numGuests = [];
                 $scope.selected = $scope.selected[0];
                 _.each(_.range($scope.selected.guests + 1), function(val) {
-                    $scope.numGuests.push({ label: '+' + val, value: val});
+                    $scope.numGuests.push({ label: val + ' guest(s)', value: val});
                 })
             }
         })
+
         $scope.submitRsvp = function() {
-            console.log($scope.guest);
             $scope.selected.foodPref = $scope.guest.diet;
             $scope.selected.status = $scope.guest.response;
             $scope.selected.selectedGuests = $scope.guest.plus

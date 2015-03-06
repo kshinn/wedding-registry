@@ -33,9 +33,13 @@ router.get('/guest', function(req,res) {
 });
 
 router.put('/guest/:id', function(req, res) {
-    db.Guest.find({id: req.params.id}).success(function(item) {
+    db.Guest.find(req.params.id).success(function(item) {
         console.log(item);
-        item.updateAttributes(req.body).success(function(item) {
+        item.updateAttributes({
+                status: req.body.status,
+                selectedGuests: req.body.guests,
+                foodPref: req.body.foodPref
+            }).success(function(item) {
             res.status(204).end();
         });
     })
