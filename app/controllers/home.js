@@ -9,20 +9,10 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
 
   db.Guest.findAll().success(function (articles) {
-    res.render('index', {
+    res.render('main', {
       title: "Phoebe & Kris' Wedding - Please log in",
     });
   });
-});
-
-router.get('/main', function(req, res) {
-    res.render('main', {
-        title: "Phoebe and Kris' Wedding - Please log in", name: 'test'});
-})
-
-router.post('/main', function(req, res) {
-    console.log(req.body);
-    res.render('main', {name: 'test'});
 });
 
 router.get('/guest', function(req,res) {
@@ -45,7 +35,3 @@ router.put('/guest/:id', function(req, res) {
     })
 })
 
-router.post('/guest/rsvp', function(req, res) {
-    console.log(req.body);
-    res.send('ok');
-})
