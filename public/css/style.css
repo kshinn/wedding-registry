@@ -41,3 +41,17 @@ ul.nav {
 hotel-img {
   max-width: inherit;
 }
+
+.slide.ng-show, .slide.ng-hide {
+  -webkit-transition:1.0s linear all;
+  transition:1.0s linear all;
+}
+
+.slide.ng-show {
+  line-height: 1em;
+  opacity: 1.0;
+}
+.slide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}

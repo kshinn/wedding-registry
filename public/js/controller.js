@@ -11,9 +11,9 @@ angular.module('PKWedding')
             $scope.allGuests = _.map(guests, 'fullName');
         })
 
-        $scope.guest = {};
+        $scope.guest = {plus: ''};
         $scope.selected = {};
-
+        $scope.numGuests = [{label: "Total guests coming...", value:""}];
         uiGmapLogger.doLog = true;
         uiGmapGoogleMapApi.then(function(maps) {
             console.log(maps)
@@ -28,7 +28,7 @@ angular.module('PKWedding')
             var labels;
             $scope.selected = _.where(guests, {fullName: newValue});
             if ($scope.selected.length > 0) {
-                $scope.numGuests = [];
+                $scope.numGuests = [{label: "Total guests coming...", value:""}];
                 $scope.selected = $scope.selected[0];
                 _.each(_.range($scope.selected.guests + 1), function(val) {
                     $scope.numGuests.push({ label: val + ' guest(s)', value: val});
@@ -40,7 +40,9 @@ angular.module('PKWedding')
             $scope.selected.foodPref = $scope.guest.diet;
             $scope.selected.status = $scope.guest.response;
             $scope.selected.selectedGuests = $scope.guest.plus
-            $scope.selected.put();
+            $scope.selected.put().then(function(result) {
+                console.log(result);
+            });
         }
     }])
 

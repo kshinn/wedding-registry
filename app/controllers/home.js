@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/guest', function(req,res) {
-    db.Guest.findAll().success(function(guests) {
+    db.Guest.findAll({where: {status: null}}).success(function(guests) {
         console.log('returning guests');
         res.send(guests);
     })
@@ -24,13 +24,12 @@ router.get('/guest', function(req,res) {
 
 router.put('/guest/:id', function(req, res) {
     db.Guest.find(req.params.id).success(function(item) {
-        console.log(item);
         item.updateAttributes({
                 status: req.body.status,
                 selectedGuests: req.body.guests,
                 foodPref: req.body.foodPref
             }).success(function(item) {
-            res.status(204).end();
+            res.send(item).end();
         });
     })
 })
