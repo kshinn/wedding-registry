@@ -14,6 +14,7 @@ angular.module('PKWedding')
         $scope.guest = {plus: ''};
         $scope.selected = {};
         $scope.numGuests = [{label: "Total guests coming...", value:""}];
+        /*
         uiGmapLogger.doLog = true;
         uiGmapGoogleMapApi.then(function(maps) {
             console.log(maps)
@@ -23,7 +24,7 @@ angular.module('PKWedding')
             center: {latitude: 51.219053, longitude: 4.404418 },
             zoom: 14
         };
-
+        */
         $scope.$watch('guest.name', function(newValue) {
             var labels;
             $scope.selected = _.where(guests, {fullName: newValue});
@@ -42,6 +43,9 @@ angular.module('PKWedding')
             $scope.selected.selectedGuests = $scope.guest.plus
             $scope.selected.put().then(function(result) {
                 console.log(result);
+                if (result.status != null) {
+                    $scope.rsvpSuccess = true;
+                }
             });
         }
     }])
