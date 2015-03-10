@@ -26,7 +26,7 @@ router.put('/guest/:id', function(req, res) {
     db.Guest.find(req.params.id).success(function(item) {
         item.updateAttributes({
                 status: req.body.status,
-                selectedGuests: req.body.guests,
+                selectedGuests: req.body.selectedGuests,
                 foodPref: req.body.foodPref
             }).success(function(item) {
             res.send(item).end();
